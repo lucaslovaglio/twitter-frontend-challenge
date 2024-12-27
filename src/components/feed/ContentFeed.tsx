@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import styled from "styled-components";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "../loader/Loader";
 import {useGetFeed} from "../../hooks/useGetFeed";
@@ -7,15 +6,6 @@ import {CursorPagination} from "../../service";
 import Feed from "./Feed";
 import {useToast} from "../toast/ToastContext";
 import {ToastType} from "../toast/Toast";
-
-// Estilo de los elementos para diferenciar el contenido
-const Item = styled.div`
-  padding: 20px;
-  margin: 10px;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-`;
 
 const ContentFeed = () => {
   const { showToast } = useToast();
