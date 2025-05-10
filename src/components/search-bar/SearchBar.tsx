@@ -17,6 +17,7 @@ export const SearchBar = () => {
     const inputQuery = e.target.value;
 
     setQuery(inputQuery);
+    if (inputQuery.length === 0) return setResults([]);
 
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(async () => {
@@ -28,6 +29,11 @@ export const SearchBar = () => {
     }, 300);
   };
 
+  const clearResults = () => {
+    setResults([]);
+    setQuery("");
+  }
+
   return (
     <StyledSearchBarContainer>
       <StyledSearchBarInput
@@ -35,7 +41,7 @@ export const SearchBar = () => {
         value={query}
         placeholder={t("placeholder.search")}
       />
-      <SearchResultModal show={query.length > 0} results={results} />
+      <SearchResultModal show={query.length > 0} results={results} close={clearResults}/>
     </StyledSearchBarContainer>
   );
 };

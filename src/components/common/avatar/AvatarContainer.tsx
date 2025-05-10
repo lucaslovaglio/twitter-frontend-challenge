@@ -8,8 +8,9 @@ export const StyledAvatarContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  //width: 100%;
   max-width: ${(props: AvatarContainerProps) => props.width || "48px"};
+  min-width: ${(props: AvatarContainerProps) => props.width || "48px"};
   height: ${(props: AvatarContainerProps) => props.height || "48px"};
   border-radius: 50%;
   cursor: pointer;
@@ -19,5 +20,6 @@ export const StyledAvatarContainer = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 50%;
   }
 `;
